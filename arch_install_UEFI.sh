@@ -86,7 +86,7 @@ echo KEYMAP=la-latin1 > /etc/vconsole.conf
 echo LANG=es_CR.UTF8 > /etc/locale.conf
 
 --------- Instalar GRUB ---------
-grub-install --efi-directory=/boot/efi --bootloader -id='Arch Linux' --target=x86_x64-efi
+grub-install --efi-directory=/boot/efi --bootloader -id='Arch Linux' --target=x86_64-efi
 grub-mkconfig -o /boot/grub/grub.cfg
 
 --------- Editar Host ---------
