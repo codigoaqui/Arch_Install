@@ -53,7 +53,7 @@ pacstrap /mnt linux linux-firmware nano grub networkmanager wpa_supplicant base 
 --------- GENERAR EL FICHERO DE PARTICIONES 'fstab' ---------
 
 genfstab /mnt >> /mnt/etc/fstab   o   genfstab -U /mnt > /mnt/etc/fstab
-cat !$ 
+cat !$                                              # Para ver como han quedado las particiones
 
 --------- DEFINIR USUARIOS DEL SISTEMA ---------
 arch-chroot /mnt                                    # Para ponernos como root
@@ -86,7 +86,7 @@ echo KEYMAP=la-latin1 > /etc/vconsole.conf
 echo LANG=es_CR.UTF8 > /etc/locale.conf
 
 --------- Instalar GRUB ---------
-grub-install --efi-directory=/boot/efi --bootloader -id='Arch Linux' --target=x86_64-efi
+grub-install --efi-directory=/boot/efi --bootloader 'Arch Linux' --target=x86_64-efi
 grub-mkconfig -o /boot/grub/grub.cfg
 
 --------- Editar Host ---------
