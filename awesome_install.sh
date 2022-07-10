@@ -4,7 +4,7 @@ mkdir -p Desktop/username/repos
 cd !$
 
 -- Clonar paru --
-# Debemos estar com usuario no priviligiado
+# Debemos estar como usuario no priviligiado
 git clone https://aur.archlinux.org/paru-bin.git
 cd paru-bin/
 makepkg -si
@@ -19,32 +19,17 @@ sudo su
 ./strap.sh
 pacman -Sy # Para ver si contempla blackarch en los repositorios
 
-- Opcional -
-pacman -S impacket
-
 --- Instalar Interfaz Xorg ---
 pacman -S xorg xorg-server
 
 --- Instalar gnome ---
 pacman -S gnome
-pacman -S kitty
 
 systemctl start gdm.service
 systemctl enable gdm.service
 
-
---- Paquetes para Maquina Virtual ---
-pacman -S gtkmm
-pacman -S open-vm-tools
-pacman -S xf86-video-vmware xf86-input-vmmouse
-
-systemctl enable vmtoolsd # Habilitar un demonio
-
--- Instalar Firefox --
-pacman -S firefox
-
 -- Instalar dotfiles --
-github.com/rxyhn/dotfiles
+github.com/rxyhn/dotfiles # Abrir en Firefox o en algun otro navegador
 
 paru -S awesome-git picom-git wezterm rofi acpi acpid acpi_call upower lxappearance-gtk3 \
 jq inotify-tools polkit-gnome xdotool xclip gpick ffmpeg blueman redshift \
@@ -56,12 +41,6 @@ systemctl --user start mpd.service
 
 sudo systemctl enable acpid.service
 sudo systemctl start acpid.service
-
--- Instalar wget --
-sudo pacman -S wget
-
--- Install 7z --
-pacman -S p7zip
 
 -- Instalar  Fuentes --
 cd /usr/share/fonts
