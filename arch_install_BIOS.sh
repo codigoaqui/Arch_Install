@@ -21,11 +21,11 @@ fdisk -l                                           # Para listar nuestros discos
 
 # El particionado del disco depende de la maquina que tenemos, en este caso es BIOS
 
-cfdisk /dev/sda (en formato dos)                          # Tambien podemos usar cfdisk y ahí elegir el disco deseado
-partición /dev/sda1  512M [primary] [Bootable]            # /boot
-partición /dev/sda2  4G   [Type] = Linux swap / Solaris   # /swap
-partición /dev/sda3  80G  [primary]                       # /
-partición /dev/sda4  100G [primary]                       # /home
+cfdisk /dev/sda (en formato dos)                                   # Tambien podemos usar cfdisk y ahí elegir el disco deseado
+partición /dev/sda1  512M [primary] [Bootable]                     # /boot
+partición /dev/sda2  4G   [primary] [Type] = Linux swap / Solaris  # /swap
+partición /dev/sda3  80G  [primary] [Type] = 83 Linux              # /
+partición /dev/sda4  100G [primary] [Type] = 83 Linux              # /home
 
 # Nota: Para la partición / y la partición /home el [Type] es 83 Linux normalmente lo pone por default
 
