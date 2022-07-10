@@ -11,7 +11,7 @@ iwconfig wlan0 essid "nombre de la red"                                         
 iwconfig wlan0 essid "nombre de la red" key s:"contraseña"                        # Se usa si la red es WPA2
 wpa_passphrase "nombre de la red" "contraseña" > /etc/nombre_del_archivo_deseado  # Se usa si la red es WPA
 wpa_supplicant -B -i wlan0 -D wext -c /etc/nombre_del_archivo_creado              # Se conecta a la red
-dhclient  # Crea la conexión
+dhclient                                                                          # Crea la conexión
 
 -------- PARTICIONADO DE DISCO -------------
 
@@ -24,6 +24,8 @@ partición /dev/sda1  512M [Type] = EFI System            # /boot
 partición /dev/sda2  4G   [Type] = Linux swap            # /swap
 partición /dev/sda3  80G  [Type] = Linux filesystem      # /
 partición /dev/sda4  100G [Type] = Linux filesystem      # /home
+
+# Nota: Para la partición / y la partición /home el [Type] es Linux filesystem normalmente lo pone por default
 
 [Write]
 yes
